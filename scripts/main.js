@@ -2,10 +2,10 @@ let myImage = document.querySelector("img");
 
 myImage.onclick = () => {
   let mySrc = myImage.getAttribute("src");
-  if (mySrc === "images/1.JPG") {
-    myImage.setAttribute("src", "images/2.JPG");
+  if (mySrc === "images/3.JPG") {
+    myImage.setAttribute("src", "images/4.JPG");
   } else {
-    myImage.setAttribute("src", "images/1.JPG");
+    myImage.setAttribute("src", "images/3.JPG");
   }
 };
 
@@ -18,17 +18,22 @@ function setUserName() {
     setUserName();
   } else {
     localStorage.setItem('name', myName);
-    myHeading.innerHTML = 'WALLPAPER is cool, ' + myName;
+    myHeading.innerHTML = 'WELCOME, ' + myName;
   }
 }
 
-if(!localStorage.getItem('name')) {
+if(!localStorage.getItem('Zhiyi')) {
   setUserName();
-} else {
-  let storedName = localStorage.getItem('name');
-  myHeading.innerHTML = 'WALLPAPER is cool, ' + storedName;
+} else {a
+  let storedName = localStorage.getItem('Zhiyi');
+  myHeading.innerHTML = 'My name is ' + storedName;
 }
 
-myButton.onclick = function() {
-  setUserName();
-}
+document.getElementById('showImageButton').addEventListener('click', function() {
+    var image = document.getElementById('hiddenImage');
+    if (image.style.display === 'none') {
+      image.style.display = 'block';
+    } else {
+      image.style.display = 'none';
+    }
+  });
